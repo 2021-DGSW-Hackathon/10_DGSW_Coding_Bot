@@ -1,0 +1,36 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:~/hackthon_summer
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    generate-ddl: true
+    database: H2
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+    hibernate:
+      ddl-auto: update
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 10MB
+    mvc:
+      static-path-pattern: /static/**
+
+auth:
+  access: com_example_hackathon_summer_server_io_jwt_secret_setting_access_token
+  refresh: com_example_hackathon_summer_server_io_jwt_secret_setting_refresh_token
+
+server:
+  get:
+    url: 192.168.51.124:8080
+
